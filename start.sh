@@ -1,3 +1,2 @@
 #!/bin/bash
-pip install gunicorn
-gunicorn locallibrary.wsgi:application 
+python3 manage.py runserver 
