@@ -1,29 +1,28 @@
 {
     "builds": [
-      {
-        "src": " locallibrary/wsgi.py",
-        "use": "@vercel/python",
-        "config": { "runtime": "python3.10.2" }
-      },{
-        "src": "migrate_modelDB.sh",
-        "use": "@vercel/static-build",
-        "config": {
-          "distDir": "staticfiles"
-        }, 
-          {
-      "src": "start.sh",
-      "use": "@vercel/static-build",
-      "config": {
-        "command": "bash start.sh"
-      }
-    }
-      }
-
+        {
+            "src": "locallibrary/wsgi.py",
+            "use": "@vercel/python"
+        },
+        {
+            "src": "migrate_modelDB.sh",
+            "use": "@vercel/static-build",
+            "config": {
+                "distDir": "staticfiles"
+            }
+        },
+        {
+            "src": "start.sh",
+            "use": "@vercel/static-build",
+            "config": {
+                "command": "bash start.sh"
+            }
+        }
     ],
     "routes": [
-      {
-        "src": "/(.*)",
-        "dest": " locallibrary/wsgi.py"
-      }
+        {
+            "src": "/(.*)",
+            "dest": "locallibrary/wsgi.py"
+        }
     ]
 }
