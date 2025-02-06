@@ -8,3 +8,4 @@ python3 manage.py makemigrations && python3 manage.py migrate
 # Colecta de staticsFiles en theme/static/
 echo "Colectando StaticFiles..."
 python3 manage.py collectstatic --noinput
+python3 manage.py runserver 
